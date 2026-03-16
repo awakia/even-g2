@@ -2,7 +2,17 @@
 
 ## プロジェクト概要
 
-Even Realities G2 スマートグラス用アプリ。通常のWebアプリとして構築し、iPhone経由でBLEでグラスに表示する。
+Even Realities G2 スマートグラス用アプリ集。通常のWebアプリとして構築し、iPhone経由でBLEでグラスに表示する。
+
+## プロジェクト構造
+
+```
+apps/{name}/   # 各アプリ（独立したWebアプリ、個別のpackage.json）
+docs/          # ドキュメント（ideas.md等）
+```
+
+新しいアプリを追加するときは `apps/{name}/` に以下を作成:
+- `package.json`, `app.json`, `index.html`, `vite.config.ts`, `tsconfig.json`, `src/main.ts`
 
 ## 技術リファレンス
 
@@ -68,6 +78,8 @@ bridge.onEvenHubEvent(event => {
 
 ## 開発コマンド
 ```bash
+cd apps/{name}     # アプリディレクトリへ移動
+npm install        # 初回のみ
 npm run dev        # Vite 開発サーバー
 npm run qr         # QR コード生成
 npm run build      # ビルド
@@ -89,5 +101,5 @@ chore: 依存パッケージを更新
 ## シミュレータ
 ```bash
 # even-dev で実行
-APP_PATH=../even-g2 ./start-even.sh
+APP_PATH=../even-g2/apps/pomodoro ./start-even.sh
 ```
