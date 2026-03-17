@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix apps/pomodoro",
+    "build": "npm run build --prefix apps/pomodoro",
+    "qr": "npm run qr --prefix apps/pomodoro",
+    "pack": "npm run pack --prefix apps/pomodoro",
+    "install:pomodoro": "npm install --prefix apps/pomodoro",
+    "sim": "evenhub-simulator http://localhost:5173"
+  },
+  "dependencies": {
+    "@evenrealities/evenhub-simulator": "^0.5.3"
+  }
+}
