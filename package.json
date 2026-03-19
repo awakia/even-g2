@@ -2,11 +2,17 @@
   "private": true,
   "scripts": {
     "dev": "npm run dev --prefix apps/pomodoro",
+    "dev:transcribe": "npm run dev --prefix apps/transcribe",
     "build": "npm run build --prefix apps/pomodoro",
+    "build:transcribe": "npm run build --prefix apps/transcribe",
     "qr": "npm run qr --prefix apps/pomodoro",
+    "qr:transcribe": "npm run qr --prefix apps/transcribe",
     "pack": "npm run pack --prefix apps/pomodoro",
+    "pack:transcribe": "npm run pack --prefix apps/transcribe",
     "install:pomodoro": "npm install --prefix apps/pomodoro",
-    "sim": "evenhub-simulator http://localhost:5173"
+    "install:transcribe": "npm install --prefix apps/transcribe",
+    "sim": "evenhub-simulator http://localhost:5173",
+    "sim:transcribe": "evenhub-simulator http://localhost:5174"
   },
   "dependencies": {
     "@evenrealities/evenhub-simulator": "^0.5.3"

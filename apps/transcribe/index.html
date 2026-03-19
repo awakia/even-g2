@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Transcribe - Settings</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; max-width: 400px; margin: 40px auto; padding: 0 20px; }
+    h1 { font-size: 1.5em; }
+    label { display: block; margin-top: 16px; font-weight: bold; font-size: 0.9em; }
+    input { width: 100%; padding: 8px; margin-top: 4px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+    button { margin-top: 20px; padding: 10px 20px; background: #333; color: white; border: none; border-radius: 4px; cursor: pointer; width: 100%; }
+    button:hover { background: #555; }
+    .status { margin-top: 12px; color: #666; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <h1>Transcribe Settings</h1>
+  <p>Rimo API credentials for real-time transcription.</p>
+
+  <label for="serverUrl">Server URL</label>
+  <input id="serverUrl" type="text" placeholder="wss://rimo-backend.rimo.app" />
+
+  <label for="apiKey">API Key</label>
+  <input id="apiKey" type="password" placeholder="Rimo-ThirdParty-API-KEY" />
+
+  <label for="userId">User ID</label>
+  <input id="userId" type="text" placeholder="Rimo User ID" />
+
+  <label for="userSecret">User Secret</label>
+  <input id="userSecret" type="password" placeholder="Rimo User Secret" />
+
+  <button id="saveBtn">Save</button>
+  <div class="status" id="status"></div>
+
+  <script type="module" src="/src/main.ts"></script>
+  <script type="module" src="/src/settings.ts"></script>
+</body>
+</html>

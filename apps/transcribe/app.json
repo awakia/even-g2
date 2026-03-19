@@ -1,0 +1,15 @@
+{
+  "package_id": "com.awakia.transcribe",
+  "edition": "202603",
+  "name": "Transcribe",
+  "version": "1.0.0",
+  "min_app_version": "0.1.0",
+  "tagline": "Real-time transcription on G2 glasses",
+  "description": "Captures audio from G2 microphone and displays real-time transcription via Rimo/Soniox.",
+  "author": "awakia",
+  "entrypoint": "index.html",
+  "permissions": {
+    "network": ["*"],
+    "fs": []
+  }
+}
