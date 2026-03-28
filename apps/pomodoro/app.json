@@ -1,15 +1,14 @@
 {
   "package_id": "com.awakia.pomodoro",
-  "edition": "202603",
+  "edition": "202601",
   "name": "Pomodoro",
   "version": "1.0.0",
   "min_app_version": "0.1.0",
+  "min_sdk_version": "0.1.0",
   "tagline": "Pomodoro timer for focused work",
   "description": "Simple pomodoro timer. 25min work / 5min break with progress bar.",
   "author": "awakia",
   "entrypoint": "index.html",
-  "permissions": {
-    "network": [],
-    "fs": []
-  }
+  "permissions": [],
+  "supported_languages": ["en", "ja"]
 }

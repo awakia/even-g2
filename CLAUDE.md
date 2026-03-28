@@ -73,8 +73,25 @@ bridge.onEvenHubEvent(event => {
 - 長文: ~400文字ずつページ分割、SCROLL_TOP/BOTTOM_EVENTで前後ページ
 
 ### パッケージング
-- `app.json` にマニフェスト定義（package_id はリバースドメイン、小文字英数のみ）
 - `evenhub pack app.json dist -o app.ehpk`
+- `app.json` のスキーマ（evenhub-cli v0.1.7時点）:
+
+```json
+{
+  "package_id": "com.awakia.appname",  // リバースドメイン、小文字英数のみ
+  "edition": "202601",                 // 固定値。CLIが受け付ける唯一の値
+  "name": "AppName",
+  "version": "1.0.0",
+  "min_app_version": "0.1.0",
+  "min_sdk_version": "0.1.0",         // 必須
+  "tagline": "短い説明",
+  "description": "詳細な説明",
+  "author": "awakia",
+  "entrypoint": "index.html",
+  "permissions": [],                   // 文字列の配列（オブジェクトではない）
+  "supported_languages": ["en", "ja"]  // 文字列の配列、必須
+}
+```
 
 ## 開発コマンド
 ```bash
@@ -85,6 +102,20 @@ npm run qr         # QR コード生成
 npm run build      # ビルド
 npm run pack       # .ehpk パッケージング
 ```
+
+## デプロイ
+
+### Even Hub に .ehpk をアップロード
+```bash
+npm run build
+npm run pack       # → app.ehpk
+```
+[Even Hub](https://hub.evenrealities.com/) のWebポータル（「Upload package」ボタン）から `.ehpk` を提出。CLIにupload/deployコマンドはない（v0.1.7時点）。
+
+### 実機へのインストール（2026-03時点: 未開放）
+- Even Realities App 内の Even Hub ストア → **coming soon**
+- QRコードサイドロード（`npm run qr`）→ アプリ内にQRスキャナーが **まだない**
+- 現状はシミュレータ（even-dev）でのテストのみ可能
 
 ## コミット規約
 
